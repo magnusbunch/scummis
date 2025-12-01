@@ -21,12 +21,49 @@
     </header>
 
     <main>
-        <!-- Hero Section -->
-        <section class="hero">
-            <div class="container">
-                <h1 class="hero-heading">Business law for modern companies</h1>
-                <p class="hero-subheading">A U.S. commercial law firm serving businesses at every stage of growth.</p>
-                <a href="contact.html" class="cta-button">Request a Consultation</a>
+        <!-- Hero Section (Slideshow) -->
+        <section class="hero" aria-label="Homepage hero">
+            <div class="slideshow" id="heroSlideshow">
+                <div class="slides">
+                    <div class="slide" style="background-image: url('https://picsum.photos/id/1018/1600/900');" aria-hidden="false">
+                        <div class="slide-overlay"></div>
+                        <div class="slide-content container">
+                            <img src="logo.png" alt="Sills Cummis & Gross logo" class="slide-logo">
+                            <h1 class="hero-heading">Business law for modern companies</h1>
+                            <p class="hero-subheading">A U.S. commercial law firm serving businesses at every stage of growth.</p>
+                            <a href="contact.html" class="cta-button">Request a Consultation</a>
+                        </div>
+                    </div>
+
+                    <div class="slide" style="background-image: url('https://picsum.photos/id/1025/1600/900');" aria-hidden="true">
+                        <div class="slide-overlay"></div>
+                        <div class="slide-content container">
+                            <img src="logo.png" alt="Sills Cummis & Gross logo" class="slide-logo">
+                            <h1 class="hero-heading">Strategic counsel. Practical results.</h1>
+                            <p class="hero-subheading">Efficient, business-minded advice for complex legal matters.</p>
+                            <a href="contact.html" class="cta-button">Request a Consultation</a>
+                        </div>
+                    </div>
+
+                    <div class="slide" style="background-image: url('https://picsum.photos/id/1031/1600/900');" aria-hidden="true">
+                        <div class="slide-overlay"></div>
+                        <div class="slide-content container">
+                            <img src="logo.png" alt="Sills Cummis & Gross logo" class="slide-logo">
+                            <h1 class="hero-heading">Trusted advocacy, across the U.S.</h1>
+                            <p class="hero-subheading">Representing companies from startups to large enterprises.</p>
+                            <a href="contact.html" class="cta-button">Request a Consultation</a>
+                        </div>
+                    </div>
+                </div>
+
+                <button class="slide-control prev" aria-label="Previous slide">‹</button>
+                <button class="slide-control next" aria-label="Next slide">›</button>
+
+                <div class="dots" aria-hidden="false">
+                    <button class="dot active" data-index="0" aria-label="Slide 1"></button>
+                    <button class="dot" data-index="1" aria-label="Slide 2"></button>
+                    <button class="dot" data-index="2" aria-label="Slide 3"></button>
+                </div>
             </div>
         </section>
 

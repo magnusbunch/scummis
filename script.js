@@ -11,6 +11,60 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 // ============================================
+// HERO SLIDESHOW
+// ============================================
+
+function initHeroSlideshow() {
+    const slideshow = document.getElementById('heroSlideshow');
+    if (!slideshow) return;
+
+    const slidesWrap = slideshow.querySelector('.slides');
+    const slides = Array.from(slidesWrap.querySelectorAll('.slide'));
+    const prevBtn = slideshow.querySelector('.slide-control.prev');
+    const nextBtn = slideshow.querySelector('.slide-control.next');
+    const dots = Array.from(slideshow.querySelectorAll('.dot'));
+
+    let current = 0;
+    let interval = null;
+    const delay = 5000;
+
+    function goTo(index) {
+        index = (index + slides.length) % slides.length;
+        current = index;
+        slidesWrap.style.transform = `translateX(${ -index * 100 }%)`;
+        slides.forEach((s, i) => s.setAttribute('aria-hidden', i !== index));
+        dots.forEach((d, i) => d.classList.toggle('active', i === index));
+    }
+
+    function next() { goTo(current + 1); }
+    function prev() { goTo(current - 1); }
+
+    function start() { interval = setInterval(next, delay); }
+    function stop() { if (interval) { clearInterval(interval); interval = null; } }
+
+    nextBtn.addEventListener('click', () => { next(); stop(); start(); });
+    prevBtn.addEventListener('click', () => { prev(); stop(); start(); });
+
+    dots.forEach(dot => dot.addEventListener('click', (e) => {
+        const idx = parseInt(dot.getAttribute('data-index'), 10) || 0;
+        goTo(idx);
+        stop(); start();
+    }));
+
+    slideshow.addEventListener('mouseenter', stop);
+    slideshow.addEventListener('focusin', stop);
+    slideshow.addEventListener('mouseleave', start);
+    slideshow.addEventListener('focusout', start);
+
+    // Initialize
+    goTo(0);
+    start();
+}
+
+// initialize hero slideshow after DOM ready
+document.addEventListener('DOMContentLoaded', initHeroSlideshow);
+
+// ============================================
 // SCROLL ANIMATIONS
 // ============================================
 

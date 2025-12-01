@@ -302,6 +302,99 @@ main {
 }
 
 /* ============================================
+   HERO SLIDESHOW STYLES
+   ============================================ */
+
+.slideshow {
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+}
+
+.slideshow .slides {
+    display: flex;
+    width: 300%;
+    transition: transform 0.8s cubic-bezier(0.4,0,0.2,1);
+}
+
+.slide {
+    min-width: 100%;
+    height: 600px;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.slide-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, rgba(6,6,23,0.35), rgba(6,6,23,0.55));
+    mix-blend-mode: multiply;
+}
+
+.slide-content {
+    position: relative;
+    z-index: 2;
+    padding: var(--spacing-4) 0;
+    text-align: center;
+    color: var(--white);
+}
+
+.slide-logo {
+    width: 84px;
+    height: auto;
+    display: inline-block;
+    margin-bottom: var(--spacing-3);
+    border-radius: 6px;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.35);
+    background: rgba(255,255,255,0.06);
+    padding: 6px;
+}
+
+.hero-heading { max-width: 900px; }
+
+.slide-control {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(255,255,255,0.12);
+    color: var(--white);
+    border: none;
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    font-size: 1.4rem;
+    transition: transform 0.2s ease, background 0.2s ease;
+    z-index: 5;
+}
+
+.slide-control:hover { transform: translateY(-50%) scale(1.06); background: rgba(255,255,255,0.18); }
+
+.slide-control.prev { left: 12px; }
+.slide-control.next { right: 12px; }
+
+.dots { position: absolute; left: 50%; transform: translateX(-50%); bottom: 18px; display: flex; gap: 8px; z-index: 6; }
+.dot { width: 10px; height: 10px; border-radius: 50%; background: rgba(255,255,255,0.35); border: none; cursor: pointer; }
+.dot.active { background: linear-gradient(90deg, var(--accent-blue), var(--accent-cyan)); box-shadow: 0 6px 16px rgba(37,99,235,0.25); }
+
+/* Responsive slide heights */
+@media (max-width: 768px) {
+    .slide { height: 460px; }
+    .hero-heading { font-size: 2rem; }
+}
+@media (max-width: 480px) {
+    .slide { height: 320px; }
+    .slide-logo { width: 64px; }
+    .slide-control { width: 40px; height: 40px; }
+}
+
+/* ============================================
    BUTTONS & CALLS TO ACTION
    ============================================ */
 
