@@ -11,6 +11,36 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 // ============================================
+// IMAGE / LOGO FALLBACKS
+// If the logo or slide images are missing, replace logo <img> with styled text so the site remains presentable.
+// ============================================
+
+function applyImageFallbacks() {
+    // Logo fallbacks inside slides
+    const logos = document.querySelectorAll('.slide-logo');
+    logos.forEach(img => {
+        // If image fails to load or has no natural width, replace with text node
+        function replaceWithText() {
+            const span = document.createElement('span');
+            span.className = 'logo-text';
+            span.textContent = 'Sills Cummis & Gross';
+            img.replaceWith(span);
+        }
+
+        if (img.complete) {
+            if (!img.naturalWidth) replaceWithText();
+        } else {
+            img.addEventListener('error', replaceWithText);
+            img.addEventListener('load', () => {
+                if (!img.naturalWidth) replaceWithText();
+            });
+        }
+    });
+}
+
+document.addEventListener('DOMContentLoaded', applyImageFallbacks);
+
+// ============================================
 // HERO SLIDESHOW
 // ============================================
 
