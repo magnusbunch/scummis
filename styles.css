@@ -321,7 +321,7 @@ main {
     min-width: 100%;
     height: 600px;
     background-size: cover;
-    background-position: center;
+    background-position: center center;
     position: relative;
     display: flex;
     align-items: center;

@@ -102,6 +102,21 @@ All design tokens (colors, spacing, fonts) are defined in CSS custom properties 
 }
 ```
 
+## Assets (Images & Logo)
+
+The hero slideshow uses local images stored in an `assets/` folder. Please place the images you provided into the `assets/` folder with these exact filenames so the slideshow displays correctly:
+
+```
+assets/logo.png        # square logo (used in slide header)
+assets/slide-1.jpg     # slide 1 - library / statues image
+assets/slide-2.jpg     # slide 2 - meeting room image
+assets/slide-3.jpg     # slide 3 - bright boardroom image
+assets/slide-4.jpg     # optional extra slide; bookshelf closeup
+assets/slide-5.jpg     # optional extra slide; additional bookshelf
+```
+
+Once the files are placed there the slideshow will use the local images automatically. If you want me to commit the image files, upload them to the project folder and I will add, commit, and push them for you.
+
 Simply update these values to customize the entire site.
 
 ## License
