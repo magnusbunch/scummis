@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Sills Cummis & Gross | Request a Consultation</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header class="header">
+        <nav class="navbar" aria-label="Main navigation">
+            <div class="nav-container">
+                <a href="index.html" class="logo">Sills Cummis & Gross</a>
+                <ul class="nav-links">
+                    <li><a href="index.html" class="nav-link">Home</a></li>
+                    <li><a href="about.html" class="nav-link">About</a></li>
+                    <li><a href="contact.html" class="nav-link active">Contact</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Contact Intro Section -->
+        <section class="contact-intro">
+            <div class="container">
+                <h1 class="page-heading">Get in Touch</h1>
+                <p class="intro-text">Contact us about your legal needs. We'd like to learn about your business and discuss how we can help.</p>
+            </div>
+        </section>
+
+        <!-- Contact Form Section -->
+        <section class="contact-form-section">
+            <div class="container contact-container">
+                <div class="form-wrapper">
+                    <h2 class="form-heading">Send us a Message</h2>
+                    <form id="contactForm" class="contact-form" novalidate>
+                        <div class="form-group">
+                            <label for="name">Name *</label>
+                            <input type="text" id="name" name="name" required>
+                            <span class="error-message" id="nameError"></span>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="email">Email *</label>
+                            <input type="email" id="email" name="email" required>
+                            <span class="error-message" id="emailError"></span>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="phone">Phone *</label>
+                            <input type="tel" id="phone" name="phone" required>
+                            <span class="error-message" id="phoneError"></span>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="company">Company</label>
+                            <input type="text" id="company" name="company">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="helpCategory">How Can We Help? *</label>
+                            <select id="helpCategory" name="helpCategory" required>
+                                <option value="">Select a category</option>
+                                <option value="litigation">Business Litigation</option>
+                                <option value="corporate">Corporate & M&A</option>
+                                <option value="realestate">Real Estate</option>
+                                <option value="bankruptcy">Bankruptcy & Restructuring</option>
+                                <option value="healthcare">Healthcare & Life Sciences</option>
+                                <option value="employment">Employment Law</option>
+                                <option value="other">Other</option>
+                            </select>
+                            <span class="error-message" id="helpCategoryError"></span>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="message">Message *</label>
+                            <textarea id="message" name="message" rows="5" required></textarea>
+                            <span class="error-message" id="messageError"></span>
+                        </div>
+
+                        <button type="submit" class="cta-button">Request a Consultation</button>
+                        <p class="form-note" id="successMessage" style="display: none; color: #2d5a3d; margin-top: 1rem;">Thank you! We'll be in touch shortly.</p>
+                    </form>
+                </div>
+
+                <div class="office-info">
+                    <h2 class="form-heading">Our Offices</h2>
+                    <div class="offices-grid">
+                        <div class="office-card">
+                            <h3>Newark, New Jersey</h3>
+                            <p>One Gateway Center<br>
+                            Newark, NJ 07102</p>
+                            <p><a href="tel:+1-973-643-1000">(973) 643-1000</a></p>
+                            <p class="office-note">Serving clients across the U.S.</p>
+                        </div>
+                        <div class="office-card">
+                            <h3>New York, New York</h3>
+                            <p>Empire State Building<br>
+                            New York, NY 10118</p>
+                            <p><a href="tel:+1-212-217-1000">(212) 217-1000</a></p>
+                            <p class="office-note">Serving clients across the U.S.</p>
+                        </div>
+                        <div class="office-card">
+                            <h3>Florida</h3>
+                            <p>Miami-Dade County<br>
+                            Miami, FL 33130</p>
+                            <p><a href="tel:+1-305-539-8000">(305) 539-8000</a></p>
+                            <p class="office-note">Serving clients across the U.S.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA Section -->
+        <section class="cta-section">
+            <div class="container">
+                <h2>Still have questions?</h2>
+                <p>Call us directly at <a href="tel:+1-973-643-1000">(973) 643-1000</a> or fill out the form above.</p>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Sills Cummis & Gross</h3>
+                    <p>&copy; 2025 Sills Cummis & Gross. All rights reserved.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Contact</h4>
+                    <p>Newark, NJ | New York, NY | Florida</p>
+                    <p><a href="tel:+1-973-643-1000">(973) 643-1000</a></p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
