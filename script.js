@@ -16,26 +16,43 @@ document.addEventListener('DOMContentLoaded', function() {
 // ============================================
 
 function applyImageFallbacks() {
-    // Logo fallbacks inside slides
-    const logos = document.querySelectorAll('.slide-logo');
-    logos.forEach(img => {
-        // If image fails to load or has no natural width, replace with text node
-        function replaceWithText() {
-            const span = document.createElement('span');
-            span.className = 'logo-text';
-            span.textContent = 'Sills Cummis & Gross';
-            img.replaceWith(span);
-        }
+    // Fallback for nav logo image
+    const navLogo = document.querySelector('.nav-logo');
+    if (!navLogo) return;
 
-        if (img.complete) {
-            if (!img.naturalWidth) replaceWithText();
-        } else {
-            img.addEventListener('error', replaceWithText);
-            img.addEventListener('load', () => {
-                if (!img.naturalWidth) replaceWithText();
-            });
+    function replaceWithText() {
+        const span = document.createElement('span');
+        span.className = 'logo-text';
+        span.textContent = 'Sills Cummis & Gross';
+        const parent = navLogo.parentElement;
+        if (parent) parent.replaceChild(span, navLogo);
+    }
+
+    if (navLogo.complete) {
+        if (!navLogo.naturalWidth) replaceWithText();
+    } else {
+        navLogo.addEventListener('error', replaceWithText);
+        navLogo.addEventListener('load', () => {
+            if (!navLogo.naturalWidth) replaceWithText();
+        });
+    }
+
+    // Header scroll behavior: toggle 'scrolled' class when user scrolls
+    const header = document.getElementById('siteHeader') || document.querySelector('.header');
+    if (header) {
+        function onScroll() {
+            if (window.scrollY > 12) {
+                header.classList.add('scrolled');
+                header.classList.remove('transparent');
+            } else {
+                header.classList.remove('scrolled');
+                header.classList.add('transparent');
+            }
         }
-    });
+        window.addEventListener('scroll', onScroll);
+        // run once
+        onScroll();
+    }
 }
 
 document.addEventListener('DOMContentLoaded', applyImageFallbacks);
